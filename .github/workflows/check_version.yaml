@@ -1,4 +1,4 @@
-name: deploy
+name: check-version
 
 on:
   schedule:
