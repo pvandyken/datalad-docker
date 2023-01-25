@@ -24,7 +24,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_HUB_USERNAME }}/mesher:latest
-            ${{ secrets.DOCKER_HUB_USERNAME }}/mesher:${{ env.version }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/datalad:latest
+            ${{ secrets.DOCKER_HUB_USERNAME }}/datalad:${{ env.version }}
           build-args: |
             "DATALAD_VERSION=${{ env.version }}"
