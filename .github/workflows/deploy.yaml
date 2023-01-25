@@ -2,7 +2,7 @@ name: deploy
 on:
   push:
     paths:
-      - 'release-versions/*'
+      - 'version.txt'
 
 jobs:
   build:
