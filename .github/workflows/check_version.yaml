@@ -15,7 +15,7 @@ jobs:
       - name: Fetch release version
         run: |
           curl -sL https://api.github.com/repos/datalad/datalad/releases/latest | \
-          jq -r ".tag_name"
+          jq -r ".tag_name" |
           xargs printf 'version=%s\n' >> $GITHUB_STATE
       - name: Validate version
         run: |
