@@ -3,6 +3,7 @@ name: check-version
 on:
   schedule:
   - cron: "23 1 * * *"
+  workflow_dispatch:
 
 jobs:
   get-version:
