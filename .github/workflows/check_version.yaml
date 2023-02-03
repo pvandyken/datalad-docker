@@ -16,7 +16,7 @@ jobs:
         run: |
           curl -sL https://api.github.com/repos/datalad/datalad/releases/latest | \
           jq -r ".tag_name" |
-          xargs printf 'version=%s\n' >> $GITHUB_STATE
+          xargs printf 'version=%s\n' >> $GITHUB_ENV
       - name: Validate version
         run: |
           if (echo "${{ env.version }}" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$'); then
