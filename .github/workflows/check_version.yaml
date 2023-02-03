@@ -19,7 +19,7 @@ jobs:
           xargs printf 'version=%s\n' >> $GITHUB_STATE
       - name: Validate version
         run: |
-          if [[ {{ env.version }} =~ [0-9]+\.[0-9]+\.[0-9]+ ]]; then
+          if (echo "{{ env.version }}" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$'); then
             tee {{ env.version }} version.txt
           else
             echo "Unrecognized version {{ env.version }}"
