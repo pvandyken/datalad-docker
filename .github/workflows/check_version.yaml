@@ -19,10 +19,10 @@ jobs:
           xargs printf 'version=%s\n' >> $GITHUB_STATE
       - name: Validate version
         run: |
-          if (echo "{{ env.version }}" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$'); then
-            tee {{ env.version }} version.txt
+          if (echo "${{ env.version }}" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$'); then
+            tee ${{ env.version }} version.txt
           else
-            echo "Unrecognized version {{ env.version }}"
+            echo "Unrecognized version ${{ env.version }}"
             exit 1
           fi
       - name: Check for modified files
