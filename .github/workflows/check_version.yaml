@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "modified=$(\
             [ -z "$(git status --porcelain)" ] && echo "false" || echo "true"\
-          )" >> $GITHUB_STATE
+          )" >> $GITHUB_ENV
       - name: Commit latest release version
         if: env.modified == 'true'
         run: |
