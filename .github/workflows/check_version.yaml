@@ -34,5 +34,5 @@ jobs:
       - name: Commit latest release version
         if: env.modified == 'true'
         run: |
-          git commit -am "New release version"
+          git commit -am "New release version: ${{ env.version }}"
           git push
